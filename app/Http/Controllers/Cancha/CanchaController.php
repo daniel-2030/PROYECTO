@@ -13,6 +13,9 @@ class CanchaController extends Controller
      */
     public function index()
     {
+        $cancha= Cancha::with(['tipocancha', 'direccion'])
+        ->orderBy('id_cancha')
+        ->get();
         return view('cancha.index');
     }
 
